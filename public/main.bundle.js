@@ -328,7 +328,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ChatService = (function () {
     function ChatService() {
-        this.chatUrl = "http://localhost:3000";
+        this.chatUrl = "https://socket-devlogger.herokuapp.com/";
     }
     ChatService.prototype.sendMessage = function (message, flag) {
         this.socket.emit('add-message', message, localStorage.getItem('username'), flag);
