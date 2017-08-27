@@ -1,9 +1,12 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+const cors = require('cors');
 
 const nodePort = process.env.PORT || 3000;
 app.use(require('express').static(__dirname + '/public'));
+
+http.use(cors);
 
 io.on('connection', (socket) => {
     console.log("A new user has just connected");
